@@ -2,57 +2,6 @@
    THE LEVI LAB — Main JavaScript
    ============================================================ */
 
-/* --- Theme (OSU / Forest) ---------------------------------- */
-(function () {
-  // Restore saved theme on load (inline script in <head> handles the initial
-  // set to avoid flash; this just ensures the toggle button reflects it)
-
-  function applyTheme(theme) {
-    if (theme === 'osu') {
-      document.documentElement.setAttribute('data-theme', 'osu');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-    localStorage.setItem('levi-lab-theme', theme);
-  }
-
-  // Inject toggle button into desktop nav
-  // (script runs at bottom of <body>, DOM already ready — no DOMContentLoaded needed)
-  (function () {
-    const navLinks = document.querySelector('.nav__links');
-    if (!navLinks) return;
-
-    const btn = document.createElement('button');
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label', 'Toggle color theme');
-
-    function renderBtn() {
-      const isOSU = document.documentElement.getAttribute('data-theme') === 'osu';
-      btn.innerHTML =
-        '<span class="theme-toggle__swatch"></span>' +
-        (isOSU ? 'Forest' : 'OSU');
-      btn.title = isOSU ? 'Switch to forest green theme' : 'Switch to OSU orange & black';
-    }
-    renderBtn();
-
-    btn.addEventListener('click', function () {
-      const isOSU = document.documentElement.getAttribute('data-theme') === 'osu';
-      applyTheme(isOSU ? 'forest' : 'osu');
-      renderBtn();
-    });
-
-    // Insert just before the Donate button. The donate link is wrapped in an
-    // <li>, so insert relative to that list item — not the <a> itself, which
-    // is not a direct child of .nav__links.
-    const donateLi = navLinks.querySelector('.btn--donate')?.closest('li');
-    if (donateLi && donateLi.parentNode === navLinks) {
-      navLinks.insertBefore(btn, donateLi);
-    } else {
-      navLinks.appendChild(btn);
-    }
-  }());
-})();
-
 /* --- Navigation -------------------------------------------- */
 (function () {
   const nav = document.querySelector('.nav');
