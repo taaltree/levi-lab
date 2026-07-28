@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software — The Levi Lab</title>
+  <meta name="description" content="Open source software packages produced by the Levi Lab at Oregon State University for wildlife ecology and conservation research." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://levi.cascadiawildlifelab.org/software.html" />
+  <meta name="theme-color" content="#1d3b2a" />
+  <meta property="og:title" content="Software — The Levi Lab" />
+  <meta property="og:description" content="Open-source tools for quantitative ecology, wildlife management, and biodiversity science." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://levi.cascadiawildlifelab.org/media/img/m228.jpg" />
+  <meta property="og:url" content="https://levi.cascadiawildlifelab.org/software.html" />
+  <meta property="og:site_name" content="The Levi Lab" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script>document.documentElement.classList.add('js');!function(){var t=localStorage.getItem('levi-lab-theme');if(t==='osu')document.documentElement.setAttribute('data-theme','osu')}();</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="nav nav--solid" id="mainNav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-name">The Levi Lab</span>
+      <span class="nav__logo-sub">Oregon State University</span>
+    </a>
+    <ul class="nav__links">
+      <li class="nav__item">
+        <a href="research.html" class="nav__link">Research</a>
+        <div class="nav__dropdown">
+          <a href="research.html#env-genetics" class="nav__dropdown-link">Environmental Genetics</a>
+          <a href="research.html#wildlife-ecology" class="nav__dropdown-link">Wildlife Ecology &amp; Trophic Cascades</a>
+          <a href="research.html#tropical" class="nav__dropdown-link">Human Livelihoods &amp; Tropical Conservation</a>
+          <a href="research.html#salmon" class="nav__dropdown-link">Salmon, Humans &amp; Wildlife</a>
+          <a href="research.html#disease" class="nav__dropdown-link">Disease Ecology</a>
+        </div>
+      </li>
+      <li><a href="publications.html" class="nav__link">Publications</a></li>
+      <li><a href="people.html" class="nav__link">People</a></li>
+      <li><a href="software.html" class="nav__link active">Software</a></li>
+      <li><a href="courses.html" class="nav__link">Courses</a></li>
+      <li><a href="join.html" class="nav__link">Join Us</a></li>
+      <li><a href="https://www.paypal.com/donate?token=L3rN-BQrTYfOn3xu_ZGGP12tN9YeshB1Ru2laAK1H5JTG6XEm7YPeZZN710vsBEfOhClmTOPZdZ970hw" target="_blank" rel="noopener" title="Support the RNAi white-nose syndrome project or Carnivore Ecology &amp; Conservation — add a note with your choice when donating" class="btn--donate" style="margin-left:0.5rem;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        Donate
+      </a></li>
+    </ul>
+    <button class="nav__hamburger" type="button" aria-label="Menu"
+            aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="research.html" class="nav__mobile-link">Research</a>
+  <span class="nav__mobile-sublabel">Research Areas</span>
+  <a href="research.html#env-genetics" class="nav__mobile-sublink">Environmental Genetics</a>
+  <a href="research.html#wildlife-ecology" class="nav__mobile-sublink">Wildlife Ecology &amp; Trophic Cascades</a>
+  <a href="research.html#tropical" class="nav__mobile-sublink">Human Livelihoods &amp; Tropical Conservation</a>
+  <a href="research.html#salmon" class="nav__mobile-sublink">Salmon, Humans &amp; Wildlife</a>
+  <a href="research.html#disease" class="nav__mobile-sublink">Disease Ecology</a>
+  <a href="publications.html" class="nav__mobile-link">Publications</a>
+  <a href="people.html" class="nav__mobile-link">People</a>
+  <a href="software.html" class="nav__mobile-link active">Software</a>
+  <a href="courses.html" class="nav__mobile-link">Courses</a>
+  <a href="join.html" class="nav__mobile-link">Join Us</a>
+  <a href="https://www.paypal.com/donate?token=L3rN-BQrTYfOn3xu_ZGGP12tN9YeshB1Ru2laAK1H5JTG6XEm7YPeZZN710vsBEfOhClmTOPZdZ970hw" target="_blank" rel="noopener" title="Support the RNAi white-nose syndrome project or Carnivore Ecology &amp; Conservation — add a note with your choice when donating" class="nav__mobile-link" style="color: var(--accent-light);">♥ Donate</a>
+</div>
+
+<main id="main">
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero__eyebrow">Open Source</span>
+    <h1>Software</h1>
+    <p class="lead">Freely available tools developed by the Levi Lab to support quantitative ecology, wildlife management, and biodiversity science.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SOFTWARE CONTENT
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+
+    <div class="fade-in" style="max-width: 680px; margin-bottom: 3.5rem;">
+      <p style="font-size: 1.05rem; color: var(--text-body); line-height: 1.8;">
+        The Levi Lab develops and releases open-source software tools to support reproducible research in wildlife ecology and conservation. Our tools span web-based simulation platforms, statistical models, and AI-assisted image analysis.
+      </p>
+    </div>
+
+    <div class="software-cards">
+
+      <!-- BIODEMOGRAPHIC HUNTING MODEL -->
+      <div class="software-card fade-in">
+        <div class="software-card__header">
+          <span class="software-card__icon">🌿</span>
+          <div class="software-card__name">Biodemographic Hunting Model</div>
+          <span class="software-card__version">Beta · Web Application</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            A web-based, user-friendly implementation of biodemographic models for assessing the long-term sustainability of subsistence hunting in tropical forests. Users can parameterize wildlife populations, hunting offtake rates, and landscape configurations to project long-term population trajectories.
+          </p>
+          <p class="software-card__desc">
+            Originally developed to support wildlife management planning for indigenous communities in Manu National Park, Peru, and subsequently applied across Amazonia and other tropical systems. The beta version was created by Tasman Thenell.
+          </p>
+          <div class="software-card__pubs">
+            <span class="software-card__pubs-label">Associated Publications</span>
+            <p class="software-card__pub">Levi, T., et al. (2009). Modeling the long-term sustainability of indigenous hunting in Manu National Park, Peru. <em>Journal of Applied Ecology</em> 46: 804–814.</p>
+            <p class="software-card__pub">Levi, T., et al. (2011). Spatial tools for modeling the sustainability of subsistence hunting in tropical forests. <em>Ecological Applications</em> 21: 1802–1818.</p>
+          </div>
+          <div class="software-card__actions">
+            <a href="https://thenellt.github.io/" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+              Launch App →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEZ 1.0 -->
+      <div class="software-card fade-in fade-in-delay-1">
+        <div class="software-card__header">
+          <span class="software-card__icon">🌳</span>
+          <div class="software-card__name">Forest Exclusion Zone Simulator</div>
+          <span class="software-card__version">FEZ 1.0 · Downloadable</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            A simulation tool for modeling how forest exclusion zones around individual trees affect seed predation by host-specific enemies (pathogens and herbivores) and the maintenance of tropical tree diversity.
+          </p>
+          <p class="software-card__desc">
+            FEZ was developed to accompany our theoretical work demonstrating that tropical forests can maintain hyperdiversity through enemy-mediated mechanisms (Janzen-Connell effects). The simulator allows users to explore how zone size, enemy specificity, and dispersal interact to determine coexistence outcomes.
+          </p>
+          <div class="software-card__pubs">
+            <span class="software-card__pubs-label">Associated Publication</span>
+            <p class="software-card__pub">Levi, T., Barfield, M., Barrantes, S., et al. (2019). Tropical forests can maintain hyperdiversity because of enemies. <em>Proceedings of the National Academy of Sciences</em>.</p>
+          </div>
+          <div class="software-card__actions">
+            <a href="software/FEZ_1.0.tar.gz" download class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+              Download FEZ 1.0 <span style="opacity:0.6;font-weight:400;">(52 KB)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NJOBVU-AI -->
+      <div class="software-card fade-in fade-in-delay-2">
+        <div class="software-card__header">
+          <span class="software-card__icon">🤖</span>
+          <div class="software-card__name">Njobvu-AI</div>
+          <span class="software-card__version">Open Source · Collaborative Platform</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            An open-source platform for collaborative image labeling and the development and deployment of custom computer vision models for ecological research. Njobvu-AI allows research teams to collaboratively annotate camera trap images and train species detection models without requiring deep machine-learning expertise.
+          </p>
+          <p class="software-card__desc">
+            Developed by Cara Appel, Abhilash Subramanian, and collaborators, the platform is designed for wildlife ecologists who need scalable, user-friendly AI tools for processing large volumes of camera trap or passive acoustic data.
+          </p>
+          <div class="software-card__pubs">
+            <span class="software-card__pubs-label">Associated Publications</span>
+            <p class="software-card__pub">Appel, C.L., Subramanian, A., Koning, J.S., et al. (2025). Developing custom computer vision models with Njobvu-AI. <em>Ecological Applications</em>.</p>
+            <p class="software-card__pub">Koning, J.S., Subramanian, A., Alotaibi, M., et al. (2024). Njobvu-AI: An open-source tool for collaborative image labeling and implementation of computer vision models. <em>ArXiv</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GT-SEQ GENOTYPING -->
+      <div class="software-card fade-in fade-in-delay-3">
+        <div class="software-card__header">
+          <span class="software-card__icon">🧬</span>
+          <div class="software-card__name">GT-seq Noninvasive Genotyping</div>
+          <span class="software-card__version">Methods Pipeline</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            A highly sensitive, accurate, and affordable SNP genotyping method adapted from GT-seq for noninvasive genetic samples (hair, scat, environmental DNA). The approach uses high-throughput amplicon sequencing to genotype wildlife from field-collected samples with minimal DNA input.
+          </p>
+          <p class="software-card__desc">
+            This pipeline dramatically reduces the cost of noninvasive genetics studies, making population-level genetic monitoring feasible for a wider range of species and study systems. It has been applied to carnivores across the Pacific Northwest and Alaska.
+          </p>
+          <div class="software-card__pubs">
+            <span class="software-card__pubs-label">Associated Publication</span>
+            <p class="software-card__pub">Eriksson, C.E., Ruprecht, J., Levi, T. (2021). More affordable and effective noninvasive SNP genotyping using high-throughput amplicon sequencing. <em>Molecular Ecology Resources</em>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /software-cards -->
+
+    <!-- OPEN SCIENCE NOTE -->
+    <div class="fade-in" style="margin-top: 5rem; padding: 3rem; background: var(--primary); border-radius: var(--radius-lg); color: var(--warm-white);">
+      <div class="open-science-grid">
+        <div>
+          <span class="eyebrow" style="color: var(--accent-light);">Open Science</span>
+          <h2 style="color: var(--warm-white); margin: 0.75rem 0 1rem;">Code &amp; Data Availability</h2>
+          <p style="color: rgba(255,255,255,0.75); line-height: 1.8;">
+            We are committed to open and reproducible science. Code and data associated with our publications are made available through GitHub, Dryad, and other public repositories wherever possible. Look for data availability statements in individual papers.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="padding: 1.25rem; background: rgba(255,255,255,0.08); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.15);">
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.4rem;">Data Repositories</div>
+            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">Dryad, NCBI GenBank, GBIF, Knowledge Network for Biocomplexity (KNB)</div>
+          </div>
+          <div style="padding: 1.25rem; background: rgba(255,255,255,0.08); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.15);">
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.4rem;">Code Repositories</div>
+            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">GitHub — code linked in individual publications</div>
+          </div>
+          <div style="padding: 1.25rem; background: rgba(255,255,255,0.08); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.15);">
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.4rem;">Sequence Data</div>
+            <div style="font-size: 0.9rem; color: rgba(255,255,255,0.8);">NCBI SRA, GenBank — accession numbers in publications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">The Levi Lab</div>
+        <div class="footer__brand-dept">Fisheries, Wildlife &amp; Conservation Sciences · OSU</div>
+        <p class="footer__tagline">Basic and applied research in wildlife ecology, environmental genetics, and conservation science.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Research</h5>
+        <ul>
+          <li><a href="research.html#env-genetics">Environmental Genetics</a></li>
+          <li><a href="research.html#wildlife-ecology">Wildlife Ecology</a></li>
+          <li><a href="research.html#tropical">Tropical Conservation</a></li>
+          <li><a href="research.html#salmon">Salmon &amp; Wildlife</a></li>
+          <li><a href="research.html#disease">Disease Ecology</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Lab</h5>
+        <ul>
+          <li><a href="people.html">People</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:taal.levi@oregonstate.edu">taal.levi@oregonstate.edu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> The Levi Lab, Oregon State University</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

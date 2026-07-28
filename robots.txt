@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://levi.cascadiawildlifelab.org/sitemap.xml
