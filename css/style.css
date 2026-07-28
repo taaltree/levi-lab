@@ -2118,3 +2118,33 @@ p:last-child { margin-bottom: 0; }
 }
 .pub-cite::before { content: "— "; color: var(--text-muted); }
 .pub-cite .pub-ref + .pub-ref::before { content: ", "; color: var(--text-muted); }
+
+/* ============================================================
+   JOIN PAGE — FUNDING CALLOUT
+   The single most consequential thing a prospective student
+   needs to know, so it is a callout rather than a footnote.
+   ============================================================ */
+.funding-note {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.35rem 1.25rem;
+  background: var(--cream);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.funding-note__label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+.funding-note p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 0.7rem;
+}
+.funding-note p:last-child { margin-bottom: 0; }
+.funding-note strong { color: var(--primary); font-weight: 600; }
