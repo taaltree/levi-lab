@@ -2148,3 +2148,17 @@ p:last-child { margin-bottom: 0; }
 }
 .funding-note p:last-child { margin-bottom: 0; }
 .funding-note strong { color: var(--primary); font-weight: 600; }
+
+/* A diagram rather than a photograph: show it whole instead of cropping
+   to fill. object-fit:cover would slice the labels off a circular
+   genome map in a 4:3 frame. */
+.research-section__media--diagram {
+  background: #fff;
+}
+.research-section__media--diagram img {
+  object-fit: contain;
+  padding: 1.5rem;
+}
+@media (max-width: 640px) {
+  .research-section__media--diagram img { padding: 0.75rem; }
+}
