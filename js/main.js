@@ -178,90 +178,107 @@
   });
 })();
 
-/* --- Publications: Year Filter & Search -------------------- */
+/* --- Publications: topic, year, and search filters ----------
+   All three compose. `?topic=` arrives from a research-area page and
+   filters on the data-topics attribute; year and search then narrow
+   further within that subset.
+   ------------------------------------------------------------ */
 (function () {
   const searchInput = document.getElementById('pubSearch');
-  const yearBtns = document.querySelectorAll('.pub-year-btn');
-  const yearGroups = document.querySelectorAll('.pub-year-group');
+  const yearBtns    = document.querySelectorAll('.pub-year-btn');
+  const yearGroups  = document.querySelectorAll('.pub-year-group');
+  const entries     = document.querySelectorAll('.pub-entry');
 
   if (!searchInput && !yearBtns.length) return;
 
-  // Year filter
+  const TOPIC_NAMES = {
+    'env-genetics':     'Environmental Genetics',
+    'wildlife-ecology': 'Wildlife Ecology & Trophic Cascades',
+    'tropical':         'Human Livelihoods & Tropical Conservation',
+    'salmon':           'Salmon, Humans & Wildlife',
+    'disease':          'Disease Ecology',
+    'cascadia':         'Cascadia Forests & Wildlife'
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const topic  = params.get('topic');
+  let year     = 'all';
+
+  // Banner telling the visitor why they are seeing a subset
+  if (topic && TOPIC_NAMES[topic]) {
+    const banner = document.getElementById('pubTopicBanner');
+    const name   = document.getElementById('pubTopicName');
+    const count  = document.getElementById('pubTopicCount');
+    if (banner && name) {
+      const n = document.querySelectorAll(
+        '.pub-entry[data-topics~="' + topic + '"]').length;
+      name.textContent = TOPIC_NAMES[topic];
+      if (count) count.textContent = n + (n === 1 ? ' publication' : ' publications');
+      banner.hidden = false;
+    }
+  }
+
+  function matchesTopic(entry) {
+    if (!topic || !TOPIC_NAMES[topic]) return true;
+    const t = entry.getAttribute('data-topics') || '';
+    return t.split(/\s+/).indexOf(topic) !== -1;
+  }
+
+  function apply() {
+    const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+    let totalVisible = 0;
+
+    yearGroups.forEach(group => {
+      const groupYear = group.dataset.year;
+      const yearOK = (year === 'all' || groupYear === year);
+      let groupVisible = 0;
+
+      group.querySelectorAll('.pub-entry').forEach(entry => {
+        const textOK = !q || entry.textContent.toLowerCase().includes(q);
+        const show = yearOK && textOK && matchesTopic(entry);
+        entry.style.display = show ? '' : 'none';
+        if (show) { groupVisible++; totalVisible++; }
+      });
+
+      // A year with nothing left to show is hidden entirely, header included
+      group.style.display = groupVisible === 0 ? 'none' : '';
+      if (groupVisible) group.classList.remove('collapsed');
+
+      const countEl = group.querySelector('.pub-year-group__count');
+      if (countEl) {
+        countEl.textContent = (q || topic)
+          ? groupVisible + (groupVisible === 1 ? ' result' : ' results')
+          : '';
+      }
+    });
+
+    const totalEl = document.getElementById('pubCount');
+    if (totalEl) {
+      const all = entries.length;
+      totalEl.textContent = (q || topic)
+        ? totalVisible + ' of ' + all + ' publications'
+        : '';
+    }
+  }
+
   yearBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       yearBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const year = btn.dataset.year;
-
-      yearGroups.forEach(group => {
-        if (year === 'all' || group.dataset.year === year) {
-          group.style.display = '';
-          group.classList.remove('collapsed');
-        } else {
-          group.style.display = 'none';
-        }
-      });
-
-      // Re-run search with new filter
-      if (searchInput) filterPubs(searchInput.value);
+      year = btn.dataset.year;
+      apply();
     });
   });
 
-  // Year group toggle (collapse/expand)
   document.querySelectorAll('.pub-year-group__header').forEach(header => {
     header.addEventListener('click', () => {
-      const group = header.closest('.pub-year-group');
-      group.classList.toggle('collapsed');
+      header.closest('.pub-year-group').classList.toggle('collapsed');
     });
   });
 
-  // Search filter
-  if (searchInput) {
-    searchInput.addEventListener('input', () => filterPubs(searchInput.value));
-  }
+  if (searchInput) searchInput.addEventListener('input', apply);
 
-  function filterPubs(query) {
-    const q = query.toLowerCase().trim();
-    let totalVisible = 0;
-
-    yearGroups.forEach(group => {
-      // Skip hidden-by-year groups
-      if (group.style.display === 'none') return;
-
-      let groupVisible = 0;
-      group.querySelectorAll('.pub-entry').forEach(entry => {
-        const text = entry.textContent.toLowerCase();
-        if (!q || text.includes(q)) {
-          entry.style.display = '';
-          groupVisible++;
-          totalVisible++;
-        } else {
-          entry.style.display = 'none';
-        }
-      });
-
-      // Hide group header if no matches
-      group.style.display = groupVisible === 0 ? 'none' : '';
-
-      // Update count badge (search results only — no per-year counts)
-      const countEl = group.querySelector('.pub-year-group__count');
-      if (countEl && q) {
-        countEl.textContent = `${groupVisible} result${groupVisible !== 1 ? 's' : ''}`;
-      } else if (countEl) {
-        countEl.textContent = '';
-      }
-    });
-
-    // Update global count
-    const countEl = document.getElementById('pubCount');
-    if (countEl) {
-      const allEntries = document.querySelectorAll('.pub-entry');
-      countEl.textContent = q
-        ? `${totalVisible} of ${allEntries.length} publications`
-        : '';
-    }
-  }
+  apply();   // run once so ?topic= takes effect on load
 })();
 
 /* --- Auto-link publication titles to Google Scholar -------- */

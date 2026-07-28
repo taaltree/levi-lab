@@ -2053,3 +2053,68 @@ p:last-child { margin-bottom: 0; }
   }
   .video-item__overlay { opacity: 1; }
 }
+
+/* ============================================================
+   PUBLICATIONS — RESEARCH-AREA FILTER BANNER
+   ============================================================ */
+.pub-topic-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.35rem;
+  background: var(--primary);
+  color: var(--warm-white);
+  border-radius: var(--radius);
+}
+.pub-topic-banner[hidden] { display: none; }
+.pub-topic-banner__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.pub-topic-banner__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+.pub-topic-banner__text strong { font-size: 1.02rem; }
+.pub-topic-banner__text span:last-child {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.pub-topic-banner__clear {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition, 0.2s);
+  white-space: nowrap;
+}
+.pub-topic-banner__clear:hover,
+.pub-topic-banner__clear:focus-visible { border-bottom-color: var(--accent-light); }
+
+/* Inline citation links inside research-area prose */
+.pub-ref {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pub-ref:hover,
+.pub-ref:focus-visible { border-bottom-color: currentColor; }
+
+/* Citation appended to a research-area bullet */
+.pub-cite {
+  display: inline;
+  font-size: 0.86em;
+  white-space: nowrap;
+}
+.pub-cite::before { content: "— "; color: var(--text-muted); }
+.pub-cite .pub-ref + .pub-ref::before { content: ", "; color: var(--text-muted); }
