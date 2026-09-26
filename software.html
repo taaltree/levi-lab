@@ -92,8 +92,50 @@
 
     <div class="software-cards">
 
-      <!-- BIODEMOGRAPHIC HUNTING MODEL -->
+      <!-- MULTIPLEX WORMHOLE -->
       <div class="software-card fade-in">
+        <div class="software-card__header">
+          <span class="software-card__icon">🧪</span>
+          <div class="software-card__name">multiplex_wormhole</div>
+          <span class="software-card__version">Python Package · Primer Design</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            <em>In silico</em> optimization of multiplex PCR primer panels for targeted sequencing. Given candidate primers for many loci, multiplex_wormhole predicts primer-dimer interactions and uses simulated annealing and iterative improvement to choose the combination that minimizes the overall dimer load, with tools for assessing how compatible a finished panel is.
+          </p>
+          <p class="software-card__desc">
+            Developed by Maggie Hallerud for noninvasive wildlife genetics, where fecal and hair DNA make efficient multiplexing essential, but applicable to any multiplex PCR targeted-sequencing assay. Available on PyPI as <code>multiplex-wormhole</code>, with a command-line interface and a Python API.
+          </p>
+          <div class="software-card__actions">
+            <a href="https://github.com/mhallerud/multiplex_wormhole" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Source on GitHub →</a>
+            <a href="https://mhallerud.github.io/multiplex_wormhole/" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Documentation</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GENOID -->
+      <div class="software-card fade-in fade-in-delay-1">
+        <div class="software-card__header">
+          <span class="software-card__icon">🐻</span>
+          <div class="software-card__name">genoID</div>
+          <span class="software-card__version">Web Application · Runs in Your Browser</span>
+        </div>
+        <div class="software-card__body">
+          <p class="software-card__desc">
+            Turns consensus multilocus genotypes from noninvasive samples into unique individuals. Upload a genotype table (SNPs or microsatellites, any panel, any species) and genoID runs five identification methods side by side, from exact matching and mismatch thresholds to likelihood-ratio and Sethi et al. (2016) approaches with an explicit genotyping-error model, so you can see whether the answer comes from the data or from the settings.
+          </p>
+          <p class="software-card__desc">
+            It also covers data QC, panel power (P(ID) and P(ID)<sub>sib</sub>), per-sample confidence, an interactive map of scats coloured by individual, and an optional spatial likelihood that uses home-range size to resolve ambiguous pairs. The app is compiled to WebAssembly and runs entirely in the browser, so unpublished genotypes never leave your machine. Results download as CSV along with an R script that reproduces the run.
+          </p>
+          <div class="software-card__actions">
+            <a href="https://taaltree.github.io/genoID/" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Launch App →</a>
+            <a href="https://github.com/taaltree/genoID" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Source on GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIODEMOGRAPHIC HUNTING MODEL -->
+      <div class="software-card fade-in fade-in-delay-2">
         <div class="software-card__header">
           <span class="software-card__icon">🌿</span>
           <div class="software-card__name">Biodemographic Hunting Model</div>
@@ -120,7 +162,7 @@
       </div>
 
       <!-- FEZ 1.0 -->
-      <div class="software-card fade-in fade-in-delay-1">
+      <div class="software-card fade-in fade-in-delay-3">
         <div class="software-card__header">
           <span class="software-card__icon">🌳</span>
           <div class="software-card__name">Forest Exclusion Zone Simulator</div>
@@ -146,7 +188,7 @@
       </div>
 
       <!-- NJOBVU-AI -->
-      <div class="software-card fade-in fade-in-delay-2">
+      <div class="software-card fade-in">
         <div class="software-card__header">
           <span class="software-card__icon">🤖</span>
           <div class="software-card__name">Njobvu-AI</div>
@@ -168,7 +210,7 @@
       </div>
 
       <!-- GT-SEQ GENOTYPING -->
-      <div class="software-card fade-in fade-in-delay-3">
+      <div class="software-card fade-in fade-in-delay-1">
         <div class="software-card__header">
           <span class="software-card__icon">🧬</span>
           <div class="software-card__name">GT-seq Noninvasive Genotyping</div>
@@ -184,49 +226,6 @@
           <div class="software-card__pubs">
             <span class="software-card__pubs-label">Associated Publication</span>
             <p class="software-card__pub">Eriksson, C.E., Ruprecht, J., Levi, T. (2021). More affordable and effective noninvasive SNP genotyping using high-throughput amplicon sequencing. <em>Molecular Ecology Resources</em>.</p>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- GENOID -->
-      <div class="software-card fade-in">
-        <div class="software-card__header">
-          <span class="software-card__icon">🐻</span>
-          <div class="software-card__name">genoID</div>
-          <span class="software-card__version">Web Application · Runs in Your Browser</span>
-        </div>
-        <div class="software-card__body">
-          <p class="software-card__desc">
-            Turns consensus multilocus genotypes from noninvasive samples into unique individuals. Upload a genotype table (SNPs or microsatellites, any panel, any species) and genoID runs five identification methods side by side, from exact matching and mismatch thresholds to likelihood-ratio and Sethi et al. (2016) approaches with an explicit genotyping-error model, so you can see whether the answer comes from the data or from the settings.
-          </p>
-          <p class="software-card__desc">
-            It also covers data QC, panel power (P(ID) and P(ID)<sub>sib</sub>), per-sample confidence, an interactive map of scats coloured by individual, and an optional spatial likelihood that uses home-range size to resolve ambiguous pairs. The app is compiled to WebAssembly and runs entirely in the browser, so unpublished genotypes never leave your machine. Results download as CSV along with an R script that reproduces the run.
-          </p>
-          <div class="software-card__actions">
-            <a href="https://taaltree.github.io/genoID/" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Launch App →</a>
-            <a href="https://github.com/taaltree/genoID" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Source on GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- MULTIPLEX WORMHOLE -->
-      <div class="software-card fade-in fade-in-delay-1">
-        <div class="software-card__header">
-          <span class="software-card__icon">🧪</span>
-          <div class="software-card__name">multiplex_wormhole</div>
-          <span class="software-card__version">Python Package · Primer Design</span>
-        </div>
-        <div class="software-card__body">
-          <p class="software-card__desc">
-            <em>In silico</em> optimization of multiplex PCR primer panels for targeted sequencing. Given candidate primers for many loci, multiplex_wormhole predicts primer-dimer interactions and uses simulated annealing and iterative improvement to choose the combination that minimizes the overall dimer load, with tools for assessing how compatible a finished panel is.
-          </p>
-          <p class="software-card__desc">
-            Developed by Maggie Hallerud for noninvasive wildlife genetics, where fecal and hair DNA make efficient multiplexing essential, but applicable to any multiplex PCR targeted-sequencing assay. Available on PyPI as <code>multiplex-wormhole</code>, with a command-line interface and a Python API.
-          </p>
-          <div class="software-card__actions">
-            <a href="https://github.com/mhallerud/multiplex_wormhole" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Source on GitHub →</a>
-            <a href="https://mhallerud.github.io/multiplex_wormhole/" target="_blank" rel="noopener" class="btn btn--outline-dark" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">Documentation</a>
           </div>
         </div>
       </div>
