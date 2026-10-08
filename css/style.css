@@ -2159,3 +2159,13 @@ p:last-child { margin-bottom: 0; }
   .films { padding: 4rem 0; }
   .film-grid { grid-template-columns: 1fr; }
 }
+
+/* FW 536 card: live MCMC animation in place of a photo (js/mcmc-anim.js) */
+.flagship-card__media--canvas { background: var(--primary-dark); }
+.flagship-card__media--canvas canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

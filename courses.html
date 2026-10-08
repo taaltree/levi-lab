@@ -92,9 +92,8 @@
 
     <!-- COURSE — FW 536 -->
     <div class="flagship-card fade-in">
-      <div class="flagship-card__media">
-        <img src="media/img/esrf-lidar.jpg" alt="Ecological data visualization">
-        <div class="flagship-card__media-overlay"></div>
+      <div class="flagship-card__media flagship-card__media--canvas">
+        <canvas id="mcmcCanvas" style="position:absolute; inset:0; width:100%; height:100%; display:block;" role="img" aria-label="Animation: a Metropolis MCMC sampler walks through a correlated two-parameter posterior, its draws accumulating while histograms of each marginal fill in against the true normal curves"></canvas>
       </div>
       <div class="flagship-card__content">
         <span class="flagship-card__badge">FW 536 · 3 Credits · Oregon State University</span>
@@ -213,5 +212,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/mcmc-anim.js" defer></script>
 </body>
 </html>
